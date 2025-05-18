@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árbol de Amor Animado</title>
+    <!-- Autoría y derechos -->
+    <meta name="author" content="Zero">
+    <meta name="copyright" content="Zero - Código libre no comercial">
+    <meta name="description" content="Árbol de Amor Animado: una sorpresa interactiva y romántica para dedicar a tu pareja o ser querido. Código libre para uso personal, educativo o de inspiración.">
+    <meta name="keywords" content="amor, sorpresa, romántico, dedicatoria, animación, árbol, corazones, pareja, aniversario, regalo digital">
+    <meta name="robots" content="index, follow">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/style.mobile.css" media="only screen and (max-width: 600px)">
+    <style>
+      .tree-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        z-index: 2;
+      }
+      .animated-heart {
+        transform-origin: center;
+        animation: beat 1s infinite;
+      }
+      @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        20% { transform: scale(1.1); }
+        40% { transform: scale(0.95); }
+        60% { transform: scale(1.08); }
+        80% { transform: scale(1); }
+      }
+      /* --- Mejor diseño para el botón de inicio --- */
+      #hola-btn {
+        font-size: 2.7rem;
+        padding: 1.1em 2.7em;
+        border-radius: 2.5em;
+        border: none;
+        background: linear-gradient(90deg, #fffbe7 0%, #ffe6a7 60%, #f7d9c4 100%);
+        color: #e60026;
+        box-shadow: 0 6px 32px #e6002622, 0 1.5px 0 #fff inset;
+        cursor: pointer;
+        font-family: 'Dancing Script', 'Pacifico', cursive, sans-serif;
+        letter-spacing: 0.13em;
+        font-weight: 700;
+        transition: background 0.3s, color 0.3s, transform 0.18s, box-shadow 0.3s;
+        outline: none;
+        border: 2.5px solid #fffbe7;
+        position: relative;
+        overflow: hidden;
+      }
+      #hola-btn::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.7);
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, #fffbe7 60%, #ffe6a7 100%);
+        opacity: 0.45;
+        z-index: 0;
+        border-radius: 50%;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      #hola-btn:hover {
+        background: linear-gradient(90deg, #ffe6a7 0%, #fffbe7 100%);
+        color: #f28482;
+        transform: scale(1.045);
+        box-shadow: 0 10px 40px #f2848233, 0 2px 0 #fff inset;
+      }
+      #hola-btn:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 12px #e6002622;
+      }
+      #hola-btn span {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 8px #fffbe7cc, 0 1px 0 #fff;
+      }
+    </style>
+</head>
+<body>
+    <!-- Intro Screen -->
+    <div id="intro-screen">
+      <button id="hola-btn">Hola</button>
+    </div>
+    <div id="floating-objects" class="hidden"></div>
+    <div class="dedication-text hidden" id="dedication-text">
+      <div class="signature" id="signature"></div>
+    </div>
+    <div class="countdown hidden" id="countdown"></div>
+    <div class="tree-container hidden" id="tree-container"></div>
+    <audio src="Music/No.5 The Day I Met Her - Esther Abrami.mp3" id="bg-music" preload="auto"></audio>
+    <script src="Js/script.js"></script>
+</body>
+</html>

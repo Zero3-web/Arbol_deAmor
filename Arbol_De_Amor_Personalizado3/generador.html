@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Link Personalizado</title>
+  <link rel="stylesheet" href="generador.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Generador de Link Personalizado</h1>
+    <form id="gen-form">
+      <label for="mensaje">Mensaje de dedicatoria:</label>
+      <textarea id="mensaje" rows="6" placeholder="Escribe tu mensaje especial aquí..."></textarea>
+      <label for="firma">Firma:</label>
+      <input type="text" id="firma" maxlength="40" placeholder="Con amor, Zero">
+      <!-- Eliminado selector de cumpleaños y fecha -->
+      <label for="musica">Nombre del archivo de música (opcional):</label>
+      <input type="text" id="musica" placeholder="music1.mp3">
+      <button type="submit">Generar Link</button>
+    </form>
+    <div id="resultado" class="hidden">
+      <h2>Tu link personalizado:</h2>
+      <input type="text" id="link-final" readonly>
+      <button id="copiar-btn">Copiar Link</button>
+    </div>
+  </div>
+  <script src="generador.js"></script>
+</body>
+</html>
