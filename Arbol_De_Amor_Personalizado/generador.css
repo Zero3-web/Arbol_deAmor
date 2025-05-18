@@ -1,0 +1,85 @@
+body {
+  background: linear-gradient(120deg, #f7d9c4 0%, #84a59d 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Dancing Script', 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: #fffbe7ee;
+  border-radius: 1.5em;
+  box-shadow: 0 6px 32px #e6002622;
+  padding: 2.5em 2em 2em 2em;
+  max-width: 420px;
+  width: 100%;
+  margin: 2em auto;
+}
+h1 {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  color: #e60026;
+  font-size: 2.2em;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+label {
+  display: block;
+  margin-top: 1.1em;
+  margin-bottom: 0.3em;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+textarea, input[type="text"], input[type="date"] {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 0.7em;
+  border: 1.5px solid #ffe6a7;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  box-sizing: border-box;
+  font-family: inherit;
+  background: #fff;
+  transition: border 0.2s;
+}
+textarea:focus, input:focus {
+  border: 1.5px solid #e60026;
+  outline: none;
+}
+button[type="submit"], #copiar-btn {
+  background: linear-gradient(90deg, #ffe6a7 0%, #f7d9c4 100%);
+  color: #e60026;
+  border: none;
+  border-radius: 2em;
+  padding: 0.8em 2.2em;
+  font-size: 1.2em;
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1.2em;
+  box-shadow: 0 2px 12px #e6002622;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+button[type="submit"]:hover, #copiar-btn:hover {
+  background: linear-gradient(90deg, #f7d9c4 0%, #ffe6a7 100%);
+  color: #f28482;
+  transform: scale(1.04);
+}
+#resultado {
+  margin-top: 2em;
+  text-align: center;
+}
+#link-final {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 0.7em;
+  border: 1.5px solid #ffe6a7;
+  font-size: 1.1em;
+  margin-bottom: 0.7em;
+  background: #fff;
+  color: #222;
+}
+.hidden {
+  display: none;
+}
