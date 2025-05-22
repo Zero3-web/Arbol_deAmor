@@ -81,7 +81,10 @@ function getURLParam(name) {
 function showDedicationText() { //seguidores
   let text = getURLParam('text');
   if (!text) {
-    text = `Para el amor de mi vida:\n\nDesde el primer momento supe que eras tú. Tu sonrisa, tu voz, tu forma de ser… todo en ti me hace sentir en casa.\n\nGracias por acompañarme en cada paso, por entenderme incluso en silencio, y por llenar mis días de amor.\n\nTe amo más de lo que las palabras pueden expresar.`;  } else {
+    text = `Amor mío:\n\
+
+Cada día doy gracias a Dios por haberte puesto en mi camino. Eres una bendición que llena mi vida de luz, paz y amor verdadero. Tu forma de expresar lo que sientes, tan sincera, tan profunda, me toca el alma. En cada gesto, en cada palabra tuya, veo el amor puro que nace de un corazón lleno de bondad y fe. Te amo con un amor que ora, que confía, que espera, y que sueña con toda una vida a tu lado del amor bonito ❤️
+.`;  } else {
     text = decodeURIComponent(text).replace(/\\n/g, '\n');
   }
   const container = document.getElementById('dedication-text');
@@ -112,7 +115,7 @@ function showSignature() {
     dedication.appendChild(signature);
   }
   let firma = getURLParam('firma');
-  signature.textContent = firma ? decodeURIComponent(firma) : "Con amor, Zero";
+  signature.textContent = firma ? decodeURIComponent(firma) : "Con todo mi corazón, Luis❤️";
   signature.classList.add('visible');
 }
 
@@ -157,8 +160,8 @@ function showCountdown() {
   const container = document.getElementById('countdown');
   let startParam = getURLParam('start');
   let eventParam = getURLParam('event');
-  let startDate = startParam ? new Date(startParam + 'T00:00:00') : new Date('2025-03-01T00:00:00'); 
-  let eventDate = eventParam ? new Date(eventParam + 'T00:00:00') : new Date('2026-03-01T00:00:00');
+  let startDate = startParam ? new Date(startParam + 'T00:00:00') : new Date('2025-02-06T00:00:00'); 
+  let eventDate = eventParam ? new Date(eventParam + 'T00:00:00') : new Date('2026-02-06T00:00:00');
 
   function update() {
     const now = new Date();
