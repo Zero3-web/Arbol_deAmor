@@ -83,8 +83,7 @@ function showDedicationText() { //seguidores
   if (!text) {
     text = `Amor mío:\n\
 
-Cada día doy gracias a Dios por haberte puesto en mi camino. Eres una bendición que llena mi vida de luz, paz y amor verdadero. Tu forma de expresar lo que sientes, tan sincera, tan profunda, me toca el alma. En cada gesto, en cada palabra tuya, veo el amor puro que nace de un corazón lleno de bondad y fe. Te amo con un amor que ora, que confía, que espera, y que sueña con toda una vida a tu lado del amor bonito ❤️
-.`;  } else {
+Cada día doy gracias a Dios por haberte puesto en mi camino. Eres una bendición que llena mi vida de luz, paz y amor verdadero. Tu forma de expresar lo que sientes, tan sincera, tan profunda, me toca el alma. En cada gesto, en cada palabra tuya, veo el amor puro que nace de un corazón lleno de bondad y fe. Te amo con un amor que ora, que confía, que espera, y que sueña con toda una vida a tu lado del amor bonito. ❤️`;  } else {
     text = decodeURIComponent(text).replace(/\\n/g, '\n');
   }
   const container = document.getElementById('dedication-text');
