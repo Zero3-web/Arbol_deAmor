@@ -157,14 +157,15 @@ function showCountdown() {
   const container = document.getElementById('countdown');
   let startParam = getURLParam('start');
   let eventParam = getURLParam('event');
-  let startDate = startParam ? new Date(startParam + 'T00:00:00') : new Date('2025-05-24T00:00:00'); 
+  let startDate = startParam ? new Date(startParam + 'T00:00:00') : new Date('2025-05-24T00:00:00');
   let eventDate = eventParam ? new Date(eventParam + 'T00:00:00') : undefined;
 
   function update() {
     const now = new Date();
     let diff = now - startDate;
     let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    let html = `Llevamos juntos: <b>${days}</b> días<br>`;
+    // let html = `Llevamos juntos: <b>${days}</b> días<br>`;
+    let html = "";
     html += "Te amo mucho, nunca dudes del amor que siento por ti ❤️ ";
     if (eventDate) {
       let eventDiff = eventDate - now;
@@ -228,7 +229,6 @@ function playBackgroundMusic() {
     // Si falla el autoplay, no mostrar ningún botón
   });
 }
-
 
 // Mostrar solo el botón al inicio, y esperar el click para iniciar todo
 window.addEventListener('DOMContentLoaded', () => {
