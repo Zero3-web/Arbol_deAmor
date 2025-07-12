@@ -181,8 +181,20 @@ function playBackgroundMusic() {
   if (musicaParam) {
     // Decodifica y previene rutas maliciosas
     musicaParam = decodeURIComponent(musicaParam).replace(/[^\w\d .\-]/g, '');
-    audio.src = 'Music/' + musicaParam;
+    // Corregir la ruta para que funcione en Windows y Live Server (minúsculas y carpeta correcta)
+    audio.src = 'music/' + musicaParam;
+    console.log('[Música] Usando archivo:', audio.src);
+  } else {
+    // Si no hay parámetro, usar el audio por defecto
+    audio.src = 'music/Eres.m4a.mp3';
+    console.log('[Música] Usando archivo por defecto:', audio.src);
   }
+
+  // Depuración: mostrar errores de carga
+  audio.onerror = function(e) {
+    console.error('[Música] Error al cargar el audio:', audio.src, e);
+    alert('No se pudo cargar el archivo de música: ' + audio.src);
+  };
 
   // --- Opción YouTube (solo mensaje de ayuda) ---
   let youtubeParam = getURLParam('youtube');
@@ -230,9 +242,11 @@ function playBackgroundMusic() {
   // Intentar reproducir inmediatamente
   audio.play().then(() => {
     btn.textContent = '🔊 Música';
-  }).catch(() => {
+    console.log('[Música] Reproducción automática exitosa');
+  }).catch((err) => {
     // Si falla el autoplay, esperar click en el botón
     btn.textContent = '▶️ Música';
+    console.warn('[Música] Autoplay bloqueado o error:', err);
   });
   btn.onclick = () => {
     if (audio.paused) {
